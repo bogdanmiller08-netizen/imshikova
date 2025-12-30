@@ -1,58 +1,20 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Калькулятор букета</title>
-    <style>
-        body {
-            font-family: Arial;
-            background: #f5f5f5;
-            padding: 40px;
-        }
-        .app {
-            background: white;
-            padding: 20px;
-            max-width: 300px;
-            margin: auto;
-            border-radius: 10px;
-        }
-        input, button {
-            width: 100%;
-            margin: 5px 0;
-            padding: 8px;
-        }
-        button {
-            background: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-    </style>
-</head>
-<body>
+#include <iostream>
+using namespace std;
 
-<div class="app">
-    <h3>Калькулятор букета</h3>
+int main() {
+    int roses = 0;
+    int tulips = 0;
 
-    <input type="number" id="roses" placeholder="Количество роз">
-    <input type="number" id="tulips" placeholder="Количество тюльпанов">
+    cout << "Калькулятор букета\n";
+    cout << "Введите количество роз: ";
+    cin >> roses;
 
-    <button onclick="calculate()">Рассчитать</button>
+    cout << "Введите количество тюльпанов: ";
+    cin >> tulips;
 
-    <p id="result"></p>
-</div>
+    int total = roses * 150 + tulips * 90;
 
-<script>
-    function calculate() {
-        let roses = document.getElementById("roses").value || 0;
-        let tulips = document.getElementById("tulips").value || 0;
+    cout << "Стоимость: " << total << " ₽" << endl;
 
-        let total = roses * 150 + tulips * 90;
-
-        document.getElementById("result").innerText =
-            "Стоимость: " + total + " ₽";
-    }
-</script>
-
-</body>
-</html>
+    return 0;
+}
