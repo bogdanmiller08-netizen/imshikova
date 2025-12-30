@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Калькулятор букета</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f5f5f5;
+            padding: 40px;
+        }
+        .app {
+            background: white;
+            padding: 20px;
+            max-width: 300px;
+            margin: auto;
+            border-radius: 10px;
+        }
+        input, button {
+            width: 100%;
+            margin: 5px 0;
+            padding: 8px;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="app">
+    <h3>Калькулятор букета</h3>
+
+    <input type="number" id="roses" placeholder="Количество роз">
+    <input type="number" id="tulips" placeholder="Количество тюльпанов">
+
+    <button onclick="calculate()">Рассчитать</button>
+
+    <p id="result"></p>
+</div>
+
+<script>
+    function calculate() {
+        let roses = document.getElementById("roses").value || 0;
+        let tulips = document.getElementById("tulips").value || 0;
+
+        let total = roses * 150 + tulips * 90;
+
+        document.getElementById("result").innerText =
+            "Стоимость: " + total + " ₽";
+    }
+</script>
+
+</body>
+</html>
